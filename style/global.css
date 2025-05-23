@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1c1c1c;
+    color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #111;
+    padding: 1em;
+    text-align: center;
+    border-bottom: 2px solid #7b39e6;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #7b39e6;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+  }
+  
+  nav a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #7b39e6;
+  }
+  
+  main {
+    max-width: 600px;
+    margin: 2em auto;
+    padding: 0 1em;
+  }
+  
+  details {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    padding: 0.8em 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  details:hover {
+    background-color: #333;
+    border-color: #7b39e6;
+  }
+  
+  summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 0.6em;
+    transition: transform 0.3s ease;
+    color: #7b39e6;
+  }
+  
+  details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  
+  .item {
+    font-size: 1.7em;
+    font-weight: bold;
+    align-items: initial;
+    color: green;
+    display: flex;
+    justify-content: space-between; /* Deixa o nome à esquerda e o preço à direita */
+    align-items: center; /* Alinha verticalmente */
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-size: 1.7em;
+    font-weight: bold;
+    display:inline;
+    color: green;
+
+
+  }
+
+  .linha-item {
+  display: flex;
+  justify-content: space-between; /* Nome à esquerda, preço à direita */
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.especial {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  align-items: center;
+  font-size: 1.2em;
+  background-color: rgba(5, 54, 5, 0.315);
+}
+
+.linha-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  gap: 10px;
+  border-top: 1px solid green; /* Linha separadora */
+}
+
+
+.button {
+  background-color: #28a745; /* Verde forte */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0c3114; /* Tom mais escuro no hover */
+}
+
+.price:hover {
+  color: rgb(188, 255, 126);
+}
+
+#carrinho {
+      font-size: 1.5rem;
+      background: #333;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      border: 2px solid #8844ff;
+}
+
+    body {
+      background: #1c1c1c;
+      color: white;
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    /* Carrinho no topo */
+
+    #carrinho-icon {
+      font-size: 1.3rem;
+      background: #333;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 2px solid #8844ff;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    #carrinho-dropdown {
+      display: none;
+      background: #2b2b2b;
+      border: 1px solid #8844ff;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 5px;
+      min-width: 250px;
+    }
+
+    #carrinho-dropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    #carrinho-dropdown li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      align-items: center;
+    }
+
+    #carrinho-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+#lista-carrinho {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block; /* garante que seja vertical */
+}
+
+#lista-carrinho li {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between; /* nome do item e subtotal ficam separados */
+  align-items: center;
+  font-size: 16px;
+}
+
+.remove-btn {
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #cc0000;
+}
+
+
+  .remove-btn{
+    background-color: rgba(124, 22, 22, 0.26);
+    border-radius: 8px;
+
+  }
+
+input[type="radio"] {
+  /* estilo da bolinha */
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid green;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: green;
+}
+
+input[type="radio"]::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: green;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+   .btn-pagamento {
+    background: linear-gradient(135deg, #ff914d, #ff4d6d);
+    color: #fff;
+    font-size: 18px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: fixed;
+     bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .btn-pagamento:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  #area-pagamento {
+    text-align: center;
+    margin-top: 30px;
+  }
+#botao-pagamento {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+#botao-pagamento:hover {
+  background-color: #45a049;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
+ 
+.cardapio{
+   text-align: center;
+  padding: 20px;
+  font-size: 28px;
+  color: #8844ff;
+
+}
+
+.contato {
+  text-align: center;
+  color: #8844ff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contato:hover {
+  color: #e67e22; 
+  transform: scale(1.05); 
+}
+
+.telefone {
+  text-align: center;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 28px;
+}
+.telefone{
+   text-align: center;
+  background-color: #2b2b2b;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}

@@ -1,0 +1,397 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arena Jaburu | Cardápio & Restaurante</title>
+    <!-- Inclusão de estilos CSS e scripts JS -->
+    <link rel="stylesheet" href="style/index.css" />
+        <!-- <script src="script.js" defer></script> -->
+
+  </head>
+  <body>
+    <header>
+      <h1>Arena Jaburu</h1>
+      <nav>
+        <ul>
+          <li><a href="#entradas">Entradas</a></li>
+          <li><a href="#hambúrgueres">Burgers</a></li>
+          <li><a href="#bebidas">Bebidas</a></li>
+          <li><a href="#refeição">Refeição</a></li>
+          <li><a href="#pizzas">Pizzas</a></li>
+          <li><a href="#sobremesas">Sobremesa</a></li>
+          <li><a href="#telefone">Telefone</a></li>
+
+
+            <!-- CARRINHO -->
+          <div id="carrinho-wrapper">
+            <div id="carrinho-icon" onclick="alternarCarrinho()">🛒 <span id="contador">0</span></div>
+          <div id="carrinho-dropdown">
+            <ul id="lista-carrinho"></ul>
+            <strong>Total: R$<span id="total-carrinho">0.00</span></strong>
+          </div>
+        </div>
+        
+            <!-- CARRINHO -->
+
+             <!-- PAGAMENTO -->
+
+          <div id="area-pagamento" style="display: none; margin-top: 20px;">
+          <button id="botao-pagamento" class="btn-pagamento">💳 Finalizar Pedido</button>
+          </div>
+
+
+
+
+  <div class="card">
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="telefone">
+  <h2 class="contato">Contato por Telefone</h2>
+  <p class="telefone">📞 9282-0195</p>
+
+        <h1 class="cardapio">Cardápio Arena Jaburu</h1>
+
+        <details id="entradas">
+            <summary>🥗 Entradas</summary>
+
+            <div class="linha-item">
+            <div class="item">Batata Frita</div>
+            <div class ="price">R$13,00</div>
+            <button class="button" onclick="adicionarAoCarrinho('batata frita', 13)"> PEDIR 🛒 </button>
+            </div>
+            
+
+            <div class="linha-item">
+            <div class="item">Batata Frita Especial</div>
+            <div class ="price">R$18,00</div>
+            <button class="button" onclick="adicionarAoCarrinho('batata frita especial', 18)"> PEDIR 🛒 </button> 
+
+            </div>
+            <div class="especial">(Bacon, queijo cheddar e queijo ralado, maionese especial.)</div>
+
+            <div class="linha-item">
+            <div class="item">Risole Salgado</div>
+            <div class ="price">R$12,00</div>
+             <button class="button" onclick="adicionarAoCarrinho('risole salgado', 12)"> PEDIR 🛒 </button> 
+            </div>
+            <div class="especial">(10 unidades.)</div>
+
+            <div class="linha-item">
+            <div class="item">Calabresa acebolada</div>
+            <div class ="price">R$28,00</div>
+             <button class="button" onclick="adicionarAoCarrinho('calabresa acebolada', 28)"> PEDIR 🛒 </button>
+            </div>
+             
+
+            <div class="linha-item">
+            <div class="item">Isca de Peixe</div>
+            <div class ="price">R$30,00</div>
+             <button class="button" onclick="adicionarAoCarrinho('isca de peixe', 30)"> PEDIR 🛒 </button> 
+            </div>
+             
+
+            <div class="linha-item">
+            <div class="item">Tiras de Frango Frito</div>
+            <div class ="price">R$32,00</div>
+             <button class="button" onclick="adicionarAoCarrinho('tiras de frango frito', 32)"> PEDIR 🛒 </button>
+            </div>
+             
+
+            <div class="linha-item">
+            <div class="item">Camarão Rosa Empanado</div>
+            <div class ="price">R$50,00</div>
+             <button class="button" onclick="adicionarAoCarrinho('camarão rosa empanado', 50)"> PEDIR 🛒 </button>
+                  
+            </div>
+            
+        </details>
+
+        <details id="sopa">
+            <summary>🍲 Sopa</summary>
+
+            <div class="linha-item">
+            <div class="item">Sopa Especial</div>
+            <div class ="price">R$15,00</div> 
+             <button class="button" onclick="adicionarAoCarrinho('Sopa Especial', 15)"> PEDIR 🛒 </button>
+            </div>
+        </details>
+
+        <details id="refeição">
+            <summary>🍽️ Pratos</summary>
+
+            <div class="linha-item">
+            <div class="item">Chapa Mista Jaburu</div>
+            <div class ="price">R$140,00</div>
+            </div>
+            <div class="especial">(400g de carne, 300g de Filé de Frango, 200g de Calabresa, Carne suína, 250g de batata frita.)</div>
+             <button class="button" onclick="adicionarAoCarrinho('chapa mista jaburu', 140)"> PEDIR 🛒 </button>
+
+             
+            <div class="linha-item">
+            <div class="item">Chapa Mista Jaburu Especial</div>
+            <div class ="price">R$180,00</div>
+            </div>
+            <button class="button" onclick="adicionarAoCarrinho('chapa mista jaburu especial', 180)"> PEDIR 🛒 </button> 
+            <div class="especial">(400g de Picanha, 200g de Filé de Dourada, 300g de Tiras de Frango Empanado, 250g de batata frita, 4 unidades de camarão rosa G.)</div>
+
+            <div class="linha-item">
+            <div class="item">Filé de Dourada Frito</div>
+            <div class ="price">R$35,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('filé dourada frito', 35)"> PEDIR 🛒 </button> 
+            <div class="especial">(Arroz, farofa, salada e feijão.)</div>
+
+            <div class="linha-item">
+            <div class="item">Bife</div> 
+            <div class ="price">R$35,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('bife', 35)"> PEDIR 🛒 </button> 
+            <div class="especial">(Arroz, farofa, salada e feijão.)</div>
+
+            <div class="linha-item">
+            <div class="item">Tiras de Frango Empanado</div>
+            <div class ="price">R$35,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('tiras de frango empanado', 35)"> PEDIR 🛒 </button>
+            <div class="especial">(Arroz, farofa, salada e feijão.)</div>
+
+            <div class="linha-item">
+            <div class="item">Filé de Frango</div>
+            <div class ="price">R$35,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('filé de frango', 35)"> PEDIR 🛒 </button> 
+            <div class="especial">(Arroz, farofa, salada e feijão.)</div>
+
+            <div class="linha-item">
+            <div class="item">Carré Suíno</div>
+            <div class ="price">R$30,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('carré suíno', 30)"> PEDIR 🛒 </button>
+            <div class="especial">(Arroz, farofa, salada e feijão.)</div>
+
+            <div class="linha-item">
+            <div class="item">Picanha</div>
+            <div class ="price">R$50,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('picanha', 50)"> PEDIR 🛒 </button> 
+            <div class="especial">(Arroz, farofa, salada e feijão.)</div>
+
+            <div class="linha-item">
+            <div class="item">Filé</div>
+            <div class ="price">R$45,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('filé', 45)"> PEDIR 🛒 </button> 
+            <div class="especial">(Arroz, farofa, salada e feijão.)</div>
+
+            <div class="linha-item">
+            <div class="item">Frango Parmegiana</div>
+            <div class ="price">R$45,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('frango parmegiana', 45)"> PEDIR 🛒 </button>
+            <div class="especial">(Peito de frango empanado com nosso delicioso molho de tomate da casa e queijo mussarela gratinado acompanha arroz branco e fritas.)</div>
+
+            <div class="linha-item">
+            <div class="item">Picanha Jaburu</div>
+            <div class ="price">R$50,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('picanha jaburu', 50)"> PEDIR 🛒 </button>
+            <div class="especial">(Fatia de Picanha na chapa servida com delicioso arroz a piamontese e molho barbecue.)</div>
+
+            <div class="linha-item">
+            <div class="item">Peixe Delícia</div>
+            <div class ="price">R$40,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('peixe delicia', 40)"> PEDIR 🛒 </button>
+            <div class="especial">(Filé de peixe frito com molho especial de camarão acompanhado de arroz, vinagrete e farofa.)</div>
+
+            <div class="linha-item">
+            <div class="item">Filé Alfredo</div> 
+            <div class ="price">R$45,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('filé alfredo', 45)"> PEDIR 🛒 </button>
+            <div class="especial">(Filé de carne com molho barbecue servido com macarrão talharim no molho Alfredo.)</div>
+        </details>
+
+        <details id="hambúrgueres">
+          <summary>🍔 Hambúrgueres</summary>
+
+          <div class="linha-item">
+          <div class="item">Jaburu</div> 
+          <div class ="price">R$20,00</div>
+          </div>
+          <button class="button" onclick="adicionarAoCarrinho('jaburu', 20)"> PEDIR 🛒 </button>
+          <div class="especial">(Pão, filé de frango empanado com farinha panco, queijo mussarela, cheddar, cebola caramelizada, maionese deliciosa da casa, salada da casa. Leva o nosso nome por um motivo... Nosso frango é especial!)</div>
+          </div>
+
+
+          <div class="linha-item">
+          <div class="item">São Francisco</div> 
+          <div class ="price">R$22,00</div>
+          </div> 
+           <button class="button" onclick="adicionarAoCarrinho('são francisco', 22)"> PEDIR 🛒 </button>
+          <div class="especial">(Pão, blend artesanal de carnes de 150g, queijo mussarela, cheddar, cebola caramelizada, com a nossa maionese especial, salada da casa. Deliciosamente maravilhoso.)</div>
+
+          <div class="linha-item">
+          <div class="item">Tucumã</div>
+          <div class ="price">R$25,00</div>
+          </div> 
+           <button class="button" onclick="adicionarAoCarrinho('tucumã', 25)"> PEDIR 🛒 </button>
+          <div class="especial">(Pão, blend artesanal de carnes de 150g, bacon, queijo mussarela, cheddar, cebola caramelizada, salada da casa e a nossa maionese especial. O nosso líder de vendas!)</div>
+
+          <div class="linha-item">
+          <div class="item">Ponto Certo</div>
+          <div class ="price">R$30,00</div>
+          </div> 
+           <button class="button" onclick="adicionarAoCarrinho('ponto certo', 30)"> PEDIR 🛒 </button>
+          <div class="especial">(Pão, blend artesanal de carnes de 150g, com o nosso blend de queijo empanado de 90g ma-ra-vi-lho-so, maionese defumada levemente apimentada e defumada e farofa de bacon crocante. Incrivelmente suculento.)</div>
+        </details>
+      
+        <details id="pizzas">
+          <summary>🍕 Pizzas</summary>
+
+          <div class="linha-item">
+          <div class="item">Pizza Broto</div>
+          <div class ="price">R$10,00</div>
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('pizza broto', 10)"> PEDIR 🛒 </button>
+          <br>
+          <input type="radio" name="sabor-pizza-broto" value="Mussarela"> MUSSARELA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-broto" value="Mista"> MISTA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-broto" value="Calabresa"> CALABRESA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-broto" value="3 Queijos"> 3 QUEIJOS </input>
+
+          <div class="linha-item">
+          <div class="item">Pizza pequena 06 Fatias </div>
+          <div class ="price">R$32,00</div>
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('pizza pequena', 32)"> PEDIR 🛒 </button>
+          <br>
+          <input type="radio" name="sabor-pizza-pequena" value="Mussarela"> MUSSARELA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-pequena" value="Mista"> MISTA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-pequena" value="Calabresa"> CALABRESA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-pequena" value="3 Queijos"> 3 QUEIJOS </input>
+          <br>
+          <input type="radio" name="sabor-pizza-pequena" value="Portuguesa"> PORTUGUESA </input>
+         
+          <div class="linha-item">
+          <div class="item">Pizza Grande 10 Fatias </div>
+          <div class ="price">R$42,00</div>
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('pizza grande', 42)"> PEDIR 🛒 </button>
+         <br>
+          <input type="radio" name="sabor-pizza-grande" value="Mussarela"> MUSSARELA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-grande" value="Mista"> MISTA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-grande" value="Calabresa"> CALABRESA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-grande" value="3 queijos"> 3 QUEIJOS </input>
+          <br>
+          <input type="radio" name="sabor-pizza-grande" value="Portuguesa"> PORTUGUESA </input>
+
+          <div class="linha-item">
+          <div class="item">Pizza Gigante 12 Fatias</div> 
+          <div class ="price">R$62,00</div> 
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('pizza gigante', 62)"> PEDIR 🛒 </button>
+          <br>
+          <input type="radio" name="sabor-pizza-gigante" value="Mussarela"> MUSSARELA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-gigante" value="Mista"> MISTA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-gigante" value="Calabresa"> CALABRESA </input>
+          <br>
+          <input type="radio" name="sabor-pizza-gigante" value="3 Queijos"> 3 QUEIJOS </input>
+          <br>
+          <input type="radio" name="sabor-pizza-gigante" value="Portuguesa"> PORTUGUESA </input>
+
+
+        </details>
+
+        <details id="bebidas">
+          <summary>🥤 Bebidas</summary>
+
+            <div class="linha-item">
+          <div class="item">Água mineral 330ml</div>
+          <div class="price">R$3,00</div>
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('água mineral', 3)"> PEDIR 🛒 </button>
+
+          <div class="linha-item">
+          <div class="item">Água com Gás</div>
+          <div class ="price">R$4,00</div>
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('água com gás', 4)"> PEDIR 🛒 </button>
+
+            <div class="linha-item">
+          <div class="item">Guaraná Garoto 600ml</div>
+          <div class ="price">R$4,00</div> 
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('guaraná garoto', 4)"> PEDIR 🛒 </button>
+
+          <div class="linha-item">
+          <div class="item">Refrigerante Lata</div>
+          <div class ="price">R$6,00</div> 
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('refrigerante lata', 6)"> PEDIR 🛒 </button>
+
+          <div class="linha-item">
+          <div class="item">H2O</div>
+          <div class ="price">R$7,00</div> 
+          </div>
+           <button class="button" onclick="adicionarAoCarrinho('h20', 7)"> PEDIR 🛒 </button>
+
+          <div class="linha-item">
+          <div class="item">Sucos</div>
+          <div class ="price">R$7,00</div>
+          </div>
+          <input type="radio" name="sabor-suco" value="maracuja"> MARACUJÁ </input>
+          <input type="radio" name="sabor-suco" value="acerola"> ACEROLA </input>
+          <input type="radio" name="sabor-suco" value="cupuacu"> CUPUAÇU </input>
+          <br>
+          <br>
+          <button class="button" onclick="adicionarAoCarrinho('suco', 7)"> PEDIR 🛒 </button>
+
+        </details>
+
+        <details id="sobremesas">
+            <summary>🍰 Sobremesas</summary>
+            
+            <div class="linha-item">
+            <div class="item">Mousse de limão </div>
+            <div class ="price">R$10,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('mousse de limão', 10)"> PEDIR 🛒 </button>
+            
+            <div class="linha-item">
+            <div class="item">Mousse de maracujá</div>
+            <div class ="price">R$10,00</div>
+            </div>
+             <button class="button" onclick="adicionarAoCarrinho('mousse de maracujá', 10)"> PEDIR 🛒 </button>
+            
+            <div class="linha-item">
+            <div class="item">Pavê</div> 
+            <div class ="price">R$10,00</div>
+            </div>
+            <button class="button" onclick="adicionarAoCarrinho('pavê',10.00)"> Adicionar </button> 
+        </details>
+    
+
+    <footer>
+      <p>Endereço: Rodovia Mangabeira, Km 5 S/N, Bairro Estrada, Ponta de Pedras, PA</p>
+      <p>&copy;Arena Jaburu</p>
+    </footer>
+    
+    <script src="index.js" defer></script>
+  </body>
+</html>
+
