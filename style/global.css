@@ -2,23 +2,6 @@
     box-sizing: border-box;
   }
 
-  @media (max-width: 600px) {
-  /* CSS para celulares */
-  body {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  #carrinho-dropdown {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .remove-btn {
-    font-size: 12px;
-  }
-  /* FIM */
-
 }
   body {
     font-family: 'Segoe UI', sans-serif;
@@ -389,4 +372,32 @@ footer {
   border-radius: 8px;
   transition: background-color 0.3s ease;
     color: #ffffff
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #carrinho-dropdown {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .remove-btn {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
 }
