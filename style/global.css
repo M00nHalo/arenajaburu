@@ -375,14 +375,14 @@ footer {
   transform: scale(1.05); 
 }
 
-.numero {
+.telefone {
   text-align: center;
   color: #ffffff;
   transition: color 0.3s ease, transform 0.3s ease;
   font-size: 28px;
 
 }
-.telefone{
+.numero{
    text-align: center;
   background-color: #2b2b2b;
   padding: 10px 20px;
