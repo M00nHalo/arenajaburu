@@ -160,6 +160,13 @@ function enviarPedido() {
     mensagem += `- ${item.nome} x${item.quantidade}\n`;
   });
 
+  const carrinhoIcon = document.getElementById('carrinho-icon');
+carrinhoIcon.addEventListener('click', alternarCarrinho);
+carrinhoIcon.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+  alternarCarrinho();
+});
+
   mensagem += `\n📦 *Taxa de Entrega:* R$${TAXA_ENTREGA.toFixed(2)}`;
   const total = carrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0) + TAXA_ENTREGA;
   mensagem += `\n💰 *Total:* R$${total.toFixed(2)}`;
