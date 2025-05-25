@@ -1,6 +1,4 @@
-
-
-  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+ let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
     function salvarCarrinho() {
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
@@ -148,10 +146,17 @@ function enviarPedido() {
     return;
   }
 
-  if (formaPagamento === "Dinheiro" && (!troco || parseFloat(troco) <= 0)) {
+  if (formaPagamento === "Dinheiro") {
+  if (troco === "") {
     alert("Informe o valor do troco.");
     return;
   }
+  const valorTroco = parseFloat(troco);
+  if (isNaN(valorTroco)) {
+    alert("Valor de troco inválido.");
+    return;
+  }
+}
 
   const TAXA_ENTREGA = 3.00;
   let mensagem = "🛒 *Meu Pedido:*\n";
@@ -182,3 +187,4 @@ carrinhoIcon.addEventListener('touchstart', (e) => {
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 }
+
