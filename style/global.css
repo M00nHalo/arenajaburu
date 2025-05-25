@@ -493,7 +493,91 @@ label {
   box-shadow: 0 0 8px #ff4d6d;
 }
 
+ /* Estilo do modal - fundo escuro */
+  #modal-fundo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+
+  /* Estilo do formulário no modal */
+  #formulario-finalizacao {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    color: white;
+    box-sizing: border-box;
+  }
+
+  #formulario-finalizacao select,
+  #formulario-finalizacao input,
+  #formulario-finalizacao textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+  }
+
+  #confirmar-pedido {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  #fechar-modal {
+    background-color: #888;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
 /* Botão Confirmar Pedido já está estilizado, só garanta que não tenha conflitos */
+
+#modal-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#modal-conteudo {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px) {
+  #modal-conteudo {
+    max-width: 400px;
+  }
+}
 
 @keyframes pop {
   0% { transform: scale(1); }
@@ -529,4 +613,3 @@ label {
   }
 
 }
-
