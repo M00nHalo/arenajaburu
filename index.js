@@ -1,5 +1,6 @@
 
 
+     
      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
     function salvarCarrinho() {
@@ -24,10 +25,10 @@
   else if (nome.includes('pizza')) {
     let grupoSabor = '';
     if (nome === 'pizza broto') grupoSabor = 'sabor-pizza-broto';
-    if (nome === 'pizza pequena') grupoSabor = 'sabor-pizza-pequena';
-    if (nome === 'pizza pequena') grupoSabor = 'sabor-pizza-pequena';
-    if (nome === 'pizza grande') grupoSabor = 'sabor-pizza-grande';
-    if (nome === 'pizza gigante') grupoSabor = 'sabor-pizza-gigante';
+    else if (nome === 'pizza pequena') grupoSabor = 'sabor-pizza-pequena';
+    else if (nome === 'pizza pequena') grupoSabor = 'sabor-pizza-pequena';
+    else if (nome === 'pizza grande') grupoSabor = 'sabor-pizza-grande';
+    else if (nome === 'pizza gigante') grupoSabor = 'sabor-pizza-gigante';
 
     const saborSelecionado = document.querySelector(`input[name="${grupoSabor}"]:checked`);
     if (!saborSelecionado) {
@@ -112,11 +113,43 @@ areaPagamento.style.display = carrinho.length > 0 ? "block" : "none";
     // Atualiza ao abrir
     atualizarCarrinho();
 
-    document.getElementById("botao-pagamento").addEventListener("click", enviarPedido);
+    document.getElementById("botao-pagamento").addEventListener("click", () => {
+      document.getElementById("forma-pagamento").addEventListener("change", () => {
+ document.getElementById("forma-pagamento").addEventListener("change", () => {
+  const forma = document.getElementById("forma-pagamento").value;
+  const campoTroco = document.getElementById("campo-troco");
+  campoTroco.style.display = forma === "Dinheiro" ? "block" : "none";
+}); const forma = document.getElementById("forma-pagamento").value;
+  const campoTroco = document.getElementById("campo-troco");
+  campoTroco.style.display = forma === "Dinheiro" ? "block" : "none";
+});
+  document.getElementById("formulario-finalizacao").style.display = "block";
+});
+
+document.getElementById("confirmar-pedido").addEventListener("click", enviarPedido);
 
 function enviarPedido() {
   if (carrinho.length === 0) {
     alert("Seu carrinho está vazio!");
+    return;
+  }
+
+  const formaPagamento = document.getElementById("forma-pagamento").value;
+  const endereco = document.getElementById("endereco").value.trim();
+  const troco = document.getElementById("troco").value;
+
+  if (!formaPagamento) {
+    alert("Selecione a forma de pagamento.");
+    return;
+  }
+
+  if (!endereco) {
+    alert("Informe o endereço de entrega.");
+    return;
+  }
+
+  if (formaPagamento === "Dinheiro" && (!troco || parseFloat(troco) <= 0)) {
+    alert("Informe o valor do troco.");
     return;
   }
 
@@ -128,12 +161,17 @@ function enviarPedido() {
   });
 
   mensagem += `\n📦 *Taxa de Entrega:* R$${TAXA_ENTREGA.toFixed(2)}`;
-
   const total = carrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0) + TAXA_ENTREGA;
   mensagem += `\n💰 *Total:* R$${total.toFixed(2)}`;
 
-  
-  const telefone = "559192820195"; 
+  mensagem += `\n\n🏠 *Endereço:* ${endereco}`;
+  mensagem += `\n💳 *Pagamento:* ${formaPagamento}`;
+
+  if (formaPagamento === "Dinheiro") {
+    mensagem += `\n💵 *Troco para:* R$${parseFloat(troco).toFixed(2)}`;
+  }
+
+  const telefone = "559192820195";
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 }
