@@ -11,40 +11,55 @@
   <body>
     <header>
       <h1>Arena Jaburu</h1>
-      <nav>
-        <ul>
-          <li><a href="#entradas">Entradas</a></li>
-          <li><a href="#hambúrgueres">Burgers</a></li>
-          <li><a href="#bebidas">Bebidas</a></li>
-          <li><a href="#refeição">Refeição</a></li>
-          <li><a href="#pizzas">Pizzas</a></li>
-          <li><a href="#sobremesas">Sobremesa</a></li>
-          <li><a href="#telefone">Telefone</a></li>
+      
+<nav>
+  <ul>
+    <li><a href="#entradas">Entradas</a></li>
+    <li><a href="#hambúrgueres">Burgers</a></li>
+    <li><a href="#bebidas">Bebidas</a></li>
+    <li><a href="#refeição">Refeição</a></li>
+    <li><a href="#pizzas">Pizzas</a></li>
+    <li><a href="#sobremesas">Sobremesa</a></li>
+    <li><a href="#telefone">Telefone</a></li>
+  </ul>
 
+  <!-- CARRINHO -->
+  <div id="carrinho-wrapper">
+    <div id="carrinho-icon" onclick="alternarCarrinho()">🛒 <span id="contador">0</span></div>
+    <div id="carrinho-dropdown">
+      <ul id="lista-carrinho"></ul>
+      <strong>Total: <span id="total-carrinho">0.00</span></strong>
+    </div>
+  </div>
 
-            <!-- CARRINHO -->
-          <div id="carrinho-wrapper">
-            <div id="carrinho-icon" onclick="alternarCarrinho()">🛒 <span id="contador">0</span></div>
-          <div id="carrinho-dropdown">
-            <ul id="lista-carrinho"></ul>
-            <strong>Total: <span id="total-carrinho">0.00</span></strong>
-          </div>
-        </div>
-        
-            <!-- CARRINHO -->
+  <!-- PAGAMENTO -->
+  <div id="area-pagamento" style="display: none; margin-top: 20px;">
+  <button id="botao-pagamento" class="btn-pagamento">💳 Finalizar Pedido</button>
 
-             <!-- PAGAMENTO -->
+ <div id="formulario-finalizacao" style="display: none; margin-top: 15px;">
+  <label for="forma-pagamento">Forma de Pagamento:</label>
+  <select id="forma-pagamento">
+    <option value="">Selecione</option>
+    <option value="Dinheiro">Dinheiro</option>
+    <option value="Pix">Pix</option>
+    <option value="Cartão de Crédito">Cartão de Crédito</option>
+    <option value="Cartão de Débito">Cartão de Débito</option>
+  </select>
 
-          <div id="area-pagamento" style="display: none; margin-top: 20px;">
-          <button id="botao-pagamento" class="btn-pagamento">💳 Finalizar Pedido</button>
-          </div>
+  <!-- Campo de troco (só aparece se "Dinheiro" for escolhido) -->
+  <div id="campo-troco" style="display: none; margin-top: 10px;">
+    <label for="troco">Troco para quanto?</label>
+    <input type="number" id="troco" placeholder="Ex: 100" min="0" />
+  </div>
 
+  <label for="endereco" style="display:block; margin-top:10px;">Endereço de Entrega:</label>
+  <textarea id="endereco" rows="3" placeholder="Rua, número, bairro..."></textarea>
 
+  <button id="confirmar-pedido" style="margin-top: 10px;">📲 Confirmar Pedido</button>
+</div>
 
+</nav>
 
-  <div class="card">
-        </ul>
-      </nav>
     </header>
 
     <main>
@@ -397,4 +412,5 @@
     <script src="index.js" defer></script>
   </body>
 </html>
+
 
