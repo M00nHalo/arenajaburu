@@ -1,7 +1,7 @@
 
 
      
-     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
     function salvarCarrinho() {
       localStorage.setItem("carrinho", JSON.stringify(carrinho));
