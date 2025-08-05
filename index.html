@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -22,6 +23,7 @@
     <li><a href="#sobremesas">Sobremesa</a></li>
     <li><a href="#telefone">Telefone</a></li>
   </ul>
+  
 
   <!-- CARRINHO -->
   <div id="carrinho-wrapper">
@@ -46,7 +48,7 @@
     <option value="Cartão de Débito">Cartão de Débito</option>
   </select>
 
-  <!-- Campo de troco (só aparece se "Dinheiro" for escolhido) -->
+  <!-- Campo de troco (só aparece se Dinheiro for escolhido) -->
   <div id="campo-troco" style="display: none; margin-top: 10px;">
     <label for="troco">Troco para quanto? (Se não precisar de troco, coloque o número 0...)</label>
     <input type="number" id="troco" placeholder="Ex: 100" min="0" />
@@ -125,20 +127,20 @@
             <div class="item">Calabresa acebolada</div>
             <div class ="price">R$28,00</div>
             </div>
-            <button class="button" onclick="adicionarAoCarrinho('risole salgado', 12)"> PEDIR 🛒 </button>
+            <button class="button" onclick="adicionarAoCarrinho('calabresa acebolada', 28)"> PEDIR 🛒 </button>
              
 
             <div class="linha-item">
             <div class="item">Isca de Peixe</div>
             <div class ="price">R$30,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('risole salgado', 12)"> PEDIR 🛒 </button>
+             <button class="button" onclick="adicionarAoCarrinho('Isca de Peixe', 30)"> PEDIR 🛒 </button>
 
             <div class="linha-item">
             <div class="item">Tiras de Frango Frito</div>
-            <div class ="price">R$32,00</div>
+            <div class ="price">R$35,00</div>
             </div>
-            <button class="button" onclick="adicionarAoCarrinho('risole salgado', 12)"> PEDIR 🛒 </button>
+            <button class="button" onclick="adicionarAoCarrinho('Tiras de Frango', 35)"> PEDIR 🛒 </button>
              
 
             <div class="linha-item">
@@ -181,51 +183,51 @@
 
             <div class="linha-item">
             <div class="item">Filé de Dourada Frito</div>
-            <div class ="price">R$35,00</div>
+            <div class ="price">R$40,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('filé dourada frito', 35)"> PEDIR 🛒 </button> 
+             <button class="button" onclick="adicionarAoCarrinho('filé dourada frito', 40)"> PEDIR 🛒 </button> 
             <div class="especial">(Arroz, farofa, salada e feijão.)</div>
 
             <div class="linha-item">
             <div class="item">Bife</div> 
-            <div class ="price">R$35,00</div>
+            <div class ="price">R$40,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('bife', 35)"> PEDIR 🛒 </button> 
+             <button class="button" onclick="adicionarAoCarrinho('Bife', 40)"> PEDIR 🛒 </button> 
             <div class="especial">(Arroz, farofa, salada e feijão.)</div>
 
             <div class="linha-item">
             <div class="item">Tiras de Frango Empanado</div>
-            <div class ="price">R$35,00</div>
+            <div class ="price">R$40,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('tiras de frango empanado', 35)"> PEDIR 🛒 </button>
+             <button class="button" onclick="adicionarAoCarrinho('Tiras de Frango Empanado', 40)"> PEDIR 🛒 </button>
             <div class="especial">(Arroz, farofa, salada e feijão.)</div>
 
             <div class="linha-item">
             <div class="item">Filé de Frango</div>
-            <div class ="price">R$35,00</div>
+            <div class ="price">R$40,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('filé de frango', 35)"> PEDIR 🛒 </button> 
+             <button class="button" onclick="adicionarAoCarrinho('filé de frango', 40)"> PEDIR 🛒 </button> 
             <div class="especial">(Arroz, farofa, salada e feijão.)</div>
 
             <div class="linha-item">
             <div class="item">Carré Suíno</div>
-            <div class ="price">R$30,00</div>
+            <div class ="price">R$40,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('carré suíno', 30)"> PEDIR 🛒 </button>
+             <button class="button" onclick="adicionarAoCarrinho('carré suíno', 40)"> PEDIR 🛒 </button>
             <div class="especial">(Arroz, farofa, salada e feijão.)</div>
 
             <div class="linha-item">
             <div class="item">Picanha</div>
-            <div class ="price">R$50,00</div>
+            <div class ="price">R$55,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('picanha', 50)"> PEDIR 🛒 </button> 
+             <button class="button" onclick="adicionarAoCarrinho('picanha', 55)"> PEDIR 🛒 </button> 
             <div class="especial">(Arroz, farofa, salada e feijão.)</div>
 
             <div class="linha-item">
             <div class="item">Filé</div>
-            <div class ="price">R$45,00</div>
+            <div class ="price">R$50,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('filé', 45)"> PEDIR 🛒 </button> 
+             <button class="button" onclick="adicionarAoCarrinho('filé', 50)"> PEDIR 🛒 </button> 
             <div class="especial">(Arroz, farofa, salada e feijão.)</div>
 
             <div class="linha-item">
@@ -237,23 +239,23 @@
 
             <div class="linha-item">
             <div class="item">Picanha Jaburu</div>
-            <div class ="price">R$50,00</div>
+            <div class ="price">R$55,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('picanha jaburu', 50)"> PEDIR 🛒 </button>
+             <button class="button" onclick="adicionarAoCarrinho('picanha jaburu', 55)"> PEDIR 🛒 </button>
             <div class="especial">(Fatia de Picanha na chapa servida com delicioso arroz a piamontese e molho barbecue.)</div>
 
             <div class="linha-item">
             <div class="item">Peixe Delícia</div>
-            <div class ="price">R$40,00</div>
+            <div class ="price">R$45,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('peixe delicia', 40)"> PEDIR 🛒 </button>
+             <button class="button" onclick="adicionarAoCarrinho('peixe delicia', 45)"> PEDIR 🛒 </button>
             <div class="especial">(Filé de peixe frito com molho especial de camarão acompanhado de arroz, vinagrete e farofa.)</div>
 
             <div class="linha-item">
             <div class="item">Filé Alfredo</div> 
-            <div class ="price">R$45,00</div>
+            <div class ="price">R$50,00</div>
             </div>
-             <button class="button" onclick="adicionarAoCarrinho('filé alfredo', 45)"> PEDIR 🛒 </button>
+             <button class="button" onclick="adicionarAoCarrinho('filé alfredo', 50)"> PEDIR 🛒 </button>
             <div class="especial">(Filé de carne com molho barbecue servido com macarrão talharim no molho Alfredo.)</div>
         </details>
 
@@ -437,4 +439,6 @@
     <script src="index.js" defer></script>
   </body>
 </html>
+
+
 
